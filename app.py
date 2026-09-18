@@ -718,7 +718,7 @@ def render_placeholder(title, subtitle, required):
 
 
 if nav == "내 종목":
-    st.image("assets/stock-dashboard-light.png", caption="한국형 주식 대시보드 디자인 시안", use_container_width=True)
+    st.image("assets/stock-dashboard-light.jpg", caption="한국형 주식 대시보드 디자인 시안", use_container_width=True)
     render_research(store, state, sample_mode)
 elif nav == "계좌 연결":
     render_portfolio(store, sample_mode)
