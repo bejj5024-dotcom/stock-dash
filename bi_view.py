@@ -6,30 +6,29 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-GOLD = '#b1883c'
-TEAL = '#37867b'
-INK = '#493e2f'
+GOLD = '#2563eb'
+TEAL = '#18a66a'
+INK = '#344258'
 
 
 def theme():
     st.markdown('''<style>
-    .stApp{background:#f8f6f1;color:#352e25}
-    [data-testid="stSidebar"]{background:#eee7da!important}
-    [data-testid="stSidebar"] *{color:#493e2f!important}
+    .stApp{background:#f4f7fb;color:#172033}
+    [data-testid="stSidebar"]{background:#fff!important}
     .block-container{max-width:1400px;padding-top:2rem}
-    [data-testid="stVerticalBlockBorderWrapper"]>div{border-color:#e7e0d3!important;border-radius:16px!important;background:#fffdf9}
-    [data-testid="stMetric"]{background:#fffdf9;border:1px solid #e7e0d3;border-radius:14px;padding:18px 22px}
-    [data-testid="stMetricValue"]{font-family:Georgia,serif;color:#715625}
-    .stButton>button[kind="primary"]{background:#9a742f;border-color:#9a742f;color:white}
-    .px-eyebrow{font-size:13px;letter-spacing:2px;color:#98763a;margin:0 0 5px}
-    .px-business{padding:20px 22px;border-left:3px solid #b1883c;background:#f4efe4;border-radius:0 12px 12px 0;font-size:16px;line-height:1.8}
-    h1,h2,h3{color:#493e2f!important;letter-spacing:-.03em}
+    [data-testid="stVerticalBlockBorderWrapper"]>div{border-color:#e5eaf2!important;border-radius:16px!important;background:#fff}
+    [data-testid="stMetric"]{background:#fff;border:1px solid #e5eaf2;border-radius:14px;padding:18px 22px}
+    [data-testid="stMetricValue"]{color:#172033}
+    .stButton>button[kind="primary"]{background:#2563eb;border-color:#2563eb;color:white}
+    .px-eyebrow{font-size:13px;letter-spacing:2px;color:#2563eb;margin:0 0 5px}
+    .px-business{padding:20px 22px;border-left:3px solid #2563eb;background:#eff6ff;border-radius:0 12px 12px 0;font-size:16px;line-height:1.8}
+    h1,h2,h3{color:#172033!important;letter-spacing:-.03em}
     </style>''', unsafe_allow_html=True)
 
 
 def draw(chart):
-    st.altair_chart(chart.configure(background='#fffdf9').configure_view(stroke=None)
-                    .configure_axis(labelColor=INK,titleColor=INK,gridColor='#eee8dd',labelFontSize=13,titleFontSize=13)
+    st.altair_chart(chart.configure(background='#ffffff').configure_view(stroke=None)
+                    .configure_axis(labelColor=INK,titleColor=INK,gridColor='#edf1f6',labelFontSize=13,titleFontSize=13)
                     .configure_legend(labelColor=INK,titleColor=INK,labelFontSize=13), use_container_width=True)
 
 
@@ -56,7 +55,7 @@ def overview(details, snapshot):
             if not df.empty:
                 df['비중']=df['평가액']/df['평가액'].sum()
                 draw(alt.Chart(df).mark_arc(innerRadius=65,outerRadius=105).encode(
-                    theta='평가액:Q',color=alt.Color('종목:N',scale=alt.Scale(range=[GOLD,TEAL,'#b96b50','#71809a','#c4ae82']),legend=alt.Legend(orient='bottom')),
+                    theta='평가액:Q',color=alt.Color('종목:N',scale=alt.Scale(range=[GOLD,'#60a5fa',TEAL,'#f59e0b','#94a3b8']),legend=alt.Legend(orient='bottom')),
                     tooltip=['종목',alt.Tooltip('평가액:Q',format=',.0f'),alt.Tooltip('비중:Q',format='.1%')]).properties(height=245))
                 st.caption('조회된 국내주식 평가액 기준 · 현금 제외')
         else:
