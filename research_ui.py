@@ -13,7 +13,7 @@ from chat_research import published, parse_bundle, trends, growth, request_text
 
 def render_research(store, state, sample_mode):
     theme()
-    hero('내 투자의 현재를 한눈에', '관심 있는 기업을 담고, 판단에 필요한 변화만 확인하세요.', 'PLANX · STOCK RESEARCH')
+    hero('투자 대시보드', '내 종목의 실적·수급·가격 변화를 한 화면에서 확인하세요.', 'PLANX · MY INVESTMENT')
     if sample_mode:
         st.info('둘러보기 중입니다. 개인 목록을 저장하려면 먼저 대시보드 비밀번호를 설정하세요.')
     else:
@@ -82,9 +82,10 @@ def render_research(store, state, sample_mode):
                '일봉':trend['daily'], '주봉':trend['weekly'], '조사일':r.get('as_of','미조사')}
         rows.append(row);details[key]=(stock, r, trend, frame)
     overview(details, st.session_state.get('account_snapshot'))
-    with st.expander('전체 지표 비교'):
-        st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
-    st.markdown('### 기업 하나를 깊게 보기')
+    st.markdown('<div class="dashboard-section">보유·관심종목 분석표</div>', unsafe_allow_html=True)
+    st.markdown('<div class="dashboard-kicker">수익률 대신 확인 가능한 공식 실적·수급·참고가를 우선 표시합니다.</div>', unsafe_allow_html=True)
+    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    st.markdown('<div class="dashboard-section">종목 상세 분석</div>', unsafe_allow_html=True)
     selected = st.selectbox('자세히 볼 종목', list(details), format_func=lambda k:stocks[k]['name'], key='research_selected')
     stock, r, trend, frame = details[selected]
     if not r:
