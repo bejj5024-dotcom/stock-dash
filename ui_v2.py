@@ -201,40 +201,41 @@ hr { border-color:#E6EAF0 !important; }
   .planx-hero { padding:22px 20px; }
   .planx-hero h1 { font-size:28px; }
 }
-/* Quiet, readable research workspace. */
-.block-container { max-width:1240px; padding-top:2rem; }
-.stApp { background:#f8f6f1; }
-section[data-testid="stSidebar"] { background:#eee7da; border-right:0; }
+/* Bright Korean brokerage dashboard. */
+.block-container { max-width:1440px; padding-top:1.35rem; }
+.stApp { background:#f4f7fb; }
+section[data-testid="stSidebar"] { background:#ffffff; border-right:1px solid #e5eaf2; }
 section[data-testid="stSidebar"] p,
 section[data-testid="stSidebar"] label,
-section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] { color:#493e2f; }
-section[data-testid="stSidebar"] .planx-brand-title { color:#493e2f; font-size:22px; }
-section[data-testid="stSidebar"] .planx-brand-sub { color:#806e50; font-size:13px; }
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] { gap:10px; }
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label { padding:14px 12px; border-radius:8px; }
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:hover { background:#e7ddc9; }
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:has(input:checked) { background:#dfcea8; box-shadow:inset 3px 0 #ad873f; }
-[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:has(input:checked) p { color:#493e2f; }
-[data-testid="stSidebar"] .stButton button p { color:#1b2c45; }
-.planx-brand { margin:12px 0 36px; }
-.planx-brand-mark { background:#a17c36; border-radius:9px; width:38px; height:38px; }
-.planx-hero { background:transparent; border:0; border-radius:0; padding:0 0 18px; box-shadow:none; margin-bottom:6px; }
-.planx-hero h1 { font-size:36px; font-weight:750; }
-.planx-hero p { font-size:16px; color:#77674e; max-width:650px; }
-.planx-eyebrow { font-size:12px; color:#98763a; letter-spacing:.12em; }
-.planx-card { box-shadow:none; min-height:132px; border-radius:12px; padding:22px; border-top:3px solid #b1883c; }
-.planx-card-title { font-size:14px; font-weight:500; }
-.planx-card-value { font-size:28px; font-variant-numeric:tabular-nums; }
-.planx-card-note { font-size:13px; color:#5d6d82; }
-[data-testid="stMetric"] { box-shadow:none; border-radius:12px; }
-[data-testid="stExpander"] { background:#fff; border-radius:10px; }
-[data-testid="stExpander"] summary p { font-size:15px; }
-[data-testid="stMarkdownContainer"] p { font-size:16px; line-height:1.75; }
-[data-testid="stCaptionContainer"] p { font-size:14px; }
-.stTabs [data-baseweb="tab-list"] { gap:4px; overflow-x:auto; }
-.stTabs [data-baseweb="tab"] { font-size:15px; padding:12px 14px; white-space:nowrap; }
-.stTextInput input { min-height:46px; font-size:16px; background:#fff; }
-.stButton > button, .stFormSubmitButton > button { min-height:44px; border-radius:8px; }
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] { color:#40516a; }
+section[data-testid="stSidebar"] .planx-brand-title { color:#111827; font-size:22px; }
+section[data-testid="stSidebar"] .planx-brand-sub { color:#8a99ad; font-size:12px; }
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] { gap:7px; }
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label { padding:12px 12px; border-radius:10px; }
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:hover { background:#f4f7fb; }
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:has(input:checked) { background:#eaf2ff; box-shadow:inset 3px 0 #2563eb; }
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:has(input:checked) p { color:#175cd3; font-weight:800; }
+.planx-brand { margin:8px 0 30px; }
+.planx-brand-mark { background:linear-gradient(145deg,#1677ff,#3b82f6); border-radius:10px; width:38px; height:38px; }
+.planx-hero { background:transparent; border:0; border-radius:0; padding:0 0 15px; box-shadow:none; margin-bottom:4px; }
+.planx-hero h1 { font-size:34px; font-weight:800; }
+.planx-hero p { font-size:15px; color:#718096; max-width:760px; }
+.planx-eyebrow { font-size:11px; color:#2878e8; letter-spacing:.12em; }
+.planx-card { min-height:116px; border-radius:14px; padding:18px; border:1px solid #e5eaf2; box-shadow:0 7px 22px rgba(40,66,110,.05); }
+.planx-card-title { font-size:13px; font-weight:700; }
+.planx-card-value { font-size:25px; font-variant-numeric:tabular-nums; }
+.planx-card-note { font-size:12px; color:#75859a; }
+[data-testid="stMetric"] { border-radius:14px; box-shadow:0 7px 22px rgba(40,66,110,.05); }
+[data-testid="stMetricDelta"] svg { display:none; }
+[data-testid="stExpander"] { background:#fff; border-radius:12px; }
+[data-testid="stExpander"] summary p { font-size:14px; }
+[data-testid="stMarkdownContainer"] p { line-height:1.68; }
+.stTabs [data-baseweb="tab-list"] { gap:6px; overflow-x:auto; border-bottom:1px solid #e5eaf2; }
+.stTabs [data-baseweb="tab"] { font-size:14px; padding:10px 14px; white-space:nowrap; }
+.stTextInput input { min-height:44px; background:#fff; }
+.stButton > button, .stFormSubmitButton > button { min-height:42px; border-radius:9px; }
+.dashboard-section { font-size:18px; font-weight:800; color:#172033; margin:20px 0 10px; }
+.dashboard-kicker { color:#75859a; font-size:13px; margin-top:-6px; margin-bottom:14px; }
 @media (max-width:640px) {
   .block-container { padding-top:1.3rem; }
   .planx-hero h1 { font-size:28px; }
